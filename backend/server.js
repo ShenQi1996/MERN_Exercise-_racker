@@ -7,7 +7,6 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -34,6 +33,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+const port = process.env.PORT || 5000;
 //   set up the routes
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
